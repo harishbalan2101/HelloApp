@@ -1,9 +1,16 @@
-package org.example;
+public class HelloApp{
+    public static void main(String[] args){
+        StringBuilder nameBuilder = new StringBuilder();
+        for (String name:args){
+            nameBuilder.append(name).append(", ");
+        }
 
-public class HelloApp {
-    public static void main(String[] args) {
-        String name = (args.length > 0) ? args[0] : "World";
-        System.out.println("Hello, " + name + "!");
+        String name = nameBuilder.toString();
+
+        if (nameBuilder.length() > 0){
+            name = nameBuilder.substring(0,nameBuilder.length() -2 );
+        }
+
+        System.out.println(name);
     }
 }
-
